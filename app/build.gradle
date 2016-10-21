@@ -10,6 +10,8 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     }
     buildTypes {
         release {
@@ -25,5 +27,13 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.0.0'
     compile 'com.android.support:support-v4:24.0.0'
     compile 'com.android.support:recyclerview-v7:24.0.0'
-    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+
+    // Android Testing Support Library's runner and rules
+    androidTestCompile 'com.android.support.test:runner:0.5'
+    androidTestCompile 'com.android.support.test:rules:0.5'
+
+    // Espresso UI Testing dependencies
+    androidTestCompile 'com.android.support:support-annotations:24.0.0'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
 }

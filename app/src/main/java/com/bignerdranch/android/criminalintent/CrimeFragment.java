@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.DatePicker;
 import android.widget.EditText;
 
 import java.util.Date;
@@ -75,7 +74,7 @@ public class CrimeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentManager manager = getFragmentManager();
-                DatePickerFragment dialog = DatePickerFragment.newInstance(mCrime.getDate());
+                DateTimePickerFragment dialog = DateTimePickerFragment.newInstance(mCrime.getDate());
                 dialog.setTargetFragment(CrimeFragment.this, REQUEST_DATE);
                 dialog.show(manager, DIALOG_DATE);
             }
@@ -100,7 +99,7 @@ public class CrimeFragment extends Fragment {
         }
 
         if (requestCode == REQUEST_DATE) {
-            Date date = (Date) data.getSerializableExtra(DatePickerFragment.EXTRA_DATE);
+            Date date = (Date) data.getSerializableExtra(DateTimePickerFragment.EXTRA_DATE);
             mCrime.setDate(date);
             updateDate();
         }
